@@ -14,30 +14,29 @@ button {
   font-size: 30px;
   position: relative;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 button span {
-  display: block;
-  width: 150%;
+  background-color: #333;
+  color: white;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
-  color: white;
+  top: -150%;
+  width: 150%;
   padding: 10px 20px;
   opacity: 0;
   pointer-events: none;
+  transition: 0.3s;
 }
 
 button:hover span {
   opacity: 1;
 }
 
-.top-tooltip span {
-  top: -175%
-}
-
-.bottom-tooltip span {
+.bottom span {
+  top: auto;
   bottom: -150%
 }
 
@@ -49,15 +48,13 @@ button span::before {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 20px 20px 20px 20px;
-}
-
-.top-tooltip span::before {
+  border-width: 15px;
   top: 100%;
-  border-color: black transparent transparent;
+  border-color: #333 transparent transparent;
 }
 
-.bottom-tooltip span::before {
+.bottom span::before {
+  top: auto;
   bottom: 100%;
   border-color: transparent transparent black transparent
 }
